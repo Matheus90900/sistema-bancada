@@ -1,0 +1,139 @@
+/* Centralizar tudo na tela */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+    background-size: 400% 400%;
+    animation: gradient 3s ease infinite;
+}
+.login-container form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Card de login */
+.login-container {
+    width: 350px;
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.3);
+
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+}
+
+/* Imagem */
+.login-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+
+    margin-bottom: 25px;
+
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+
+    box-shadow: 0 0 15px rgba(255,255,255,0.4);
+}
+
+/* Inputs */
+/* Inputs */
+.login-container input {
+    width: 100%;          /* ocupa toda a largura do container */
+    max-width: 280px;     /* mantém o tamanho agradável */
+    padding: 14px;
+    margin: 10px 0;       /* espaço entre os campos */
+    margin-top: center;
+
+    border: none;
+    border-radius: 8px;
+
+    background: rgba(255,255,255,0.25);
+    color: #fff;
+    font-size: 16px;
+
+    outline: none;
+    box-sizing: border-box; /* garante que padding não aumente a largura */
+}
+
+/* Placeholder */
+.login-container input::placeholder {
+    color: #e5e5e5;
+}
+
+/* Botão */
+.login-container button {
+    width: 100%;
+    max-width: 280px;
+    padding: 14px;
+    margin-top: center;
+
+    background: BLACK;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease;
+
+}
+
+.login-container button:hover {
+    background: black;
+    transform: scale(1.03);
+}
+
+
+
+@keyframes gradient{
+    0%{
+       background: linear-gradient(120deg, #8B1C62, #FF34B3);
+    }
+    10%{
+       background: linear-gradient(120deg, #EEE8AA, #FAFAD2);
+    }
+    20%{
+       background: linear-gradient(120deg, #9400D3, #8A2BE2);
+    }
+    30%{
+       background: linear-gradient(120deg, #43CB80, #2E8B57);
+    }
+    40%{
+       background: linear-gradient(120deg, #FFB96A, #8B3A3A);
+    }
+    50%{
+       background: linear-gradient(120deg, #00008B, #008B8B);
+    }
+    60%{
+       background: linear-gradient(120deg, #6C82FF, #104E8B);
+    }
+    70%{
+       background: linear-gradient(120deg, #9370DB, #D8DFD8);
+    }
+    80%{
+       background: linear-gradient(120deg, #B22222, #FF4500);
+    }
+    90%{
+       background: linear-gradient(120deg, #66CDAA, #7FFFD4);
+    }
+    100%{
+         background: linear-gradient(120deg, #8B1C62, #FF34B3);
+    }
+}
