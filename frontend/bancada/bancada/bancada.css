@@ -1,0 +1,26 @@
+.bancadas-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.bancada-card {
+    background: #fff;
+    padding: 20px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.bancada-card span {
+    font-weight: bold;
+}
+
+.bancada-livre {
+    color: green;
+}
+
+.bancada-ocupada {
+    color: red;
+}
