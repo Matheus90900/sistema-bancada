@@ -14,15 +14,21 @@
 
 <div class="login-container">
     <h1>Login</h1>
-    <form>
-        <input type="text" placeholder="Usuário" required />
-        <input type="password" placeholder="Senha" required />
-        <button type="submit">Entrar</button>
-    </form>
-    <p><a href="#">Esqueceu a senha?</a></p>
+
+    <form onsubmit="login(event)">
+    <input id="loginEmail" type="email" placeholder="E-mail" required />
+    <input id="loginPass" type="password" placeholder="Senha" required />
+    <button type="submit">Entrar</button>
+</form>
+
+
+    <p><a href="register.html">Criar conta</a></p>
 </div>
 
 <script src="index.js"></script>
+<script src="particles.js"></script>
+<script src="auth.js"></script>
+
 
 </body>
 </html>

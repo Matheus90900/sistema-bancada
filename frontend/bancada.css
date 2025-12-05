@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000; /* Barra preta */
+    padding: 15px 20px;
+    color: white;
+}
+
+.menu-esquerda a {
+    color: white; /* Texto branco */
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.menu-esquerda a:last-child {
+    margin-right: 0;
+}
+
+.menu-direita a {
+    background-color: red; /* Caixa vermelha */
+    color: white;           /* Texto branco */
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}

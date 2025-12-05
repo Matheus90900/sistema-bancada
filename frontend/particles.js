@@ -5,23 +5,22 @@ let width = canvas.width = window.innerWidth;
 let height = canvas.height = window.innerHeight;
 
 const particlesArray = [];
-const particleCount = 200; // pode aumentar ou diminuir
+const particleCount = 200;
 
 class Particle {
     constructor() {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
         this.size = Math.random() * 3 + 1;
-        this.speedX = (Math.random() - 0.5) * 5; // horizontal suave
-        this.speedY = (Math.random() - 0.5) * 5; // vertical suave
-        this.color = `rgba(255, 255, 255, 0.8)`; // branco translúcido
+        this.speedX = (Math.random() - 0.5) * 5;
+        this.speedY = (Math.random() - 0.5) * 5;
+        this.color = `rgba(255, 255, 255, 0.8)`;
     }
 
     update() {
         this.x += this.speedX;
         this.y += this.speedY;
 
-        // reinicia do outro lado se sair da tela
         if (this.x > width) this.x = 0;
         if (this.x < 0) this.x = width;
         if (this.y > height) this.y = 0;
@@ -60,6 +59,3 @@ window.addEventListener('resize', () => {
 
 initParticles();
 animate();
-
-
-

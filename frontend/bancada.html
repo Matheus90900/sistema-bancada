@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Página com Barra Superior</title>
+<link rel="stylesheet" href="bancada.css">
+</head>
+<body>
+
+<div class="topbar">
+    <div class="menu-esquerda">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="pedidos.html">Pedidos</a>
+    <a href="usuarios.html">👤 Usuários</a>
+
+    </div>
+
+    <div class="menu-direita">
+        <a href="index.html">Sair</a>
+    </div>
+</div>
+<script>
+document.getElementById("btnSair").addEventListener("click", () => {
+    // Redireciona para a página de login
+    window.location.href = "index.html";
+});
+</script>
+
+</body>
+</html>
