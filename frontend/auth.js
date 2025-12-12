@@ -52,8 +52,8 @@ function login(event) {
 
     if (match) {
         alert(`Bem-vindo(a), ${match.firstName}!`);
-        // Exemplo de direcionamento após login:
-        // window.location.href = "dashboard.html";
+        
+        window.location.href = "dashboard.html";
     } else {
         alert("E-mail ou senha incorretos!");
     }

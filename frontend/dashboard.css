@@ -129,7 +129,7 @@ body {
 }
 
 .content-header {
-
+    display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
 }
@@ -178,29 +178,18 @@ body {
     color: #7dffa4;
 }
 
-.container {
-    display: flex;
-    gap: 20px;
-    margin-top: 10px;
+/* Congelamento */
+.frozen {
+    pointer-events: none;
+    opacity: 0.5;
 }
 
-.box {
-    flex: 1;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    gap: 15px;
+.frozen-banner {
+    position: fixed;
+    right: 18px;
+    background: #0b1212;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: none;
 }
-
-.box h3 {
-    font-size: 15px;
-    margin: 0;
-    color: #e6eef6;
-}
-
-
-

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel</title>
-    <link rel="stylesheet" href="bancada.css">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
 
@@ -21,9 +21,9 @@
             </div>
 
             <nav class="menu">
-                <a href="dashboard.html">Geral</a>
+                <a href="#" class="active">Geral</a>
                 <a href="producao.html">Produção</a>
-                <a href="#" class="active">Bancada</a>
+                <a href="bancada.html">Bancada</a>
                 <a href="usuario.html">Usuário</a>
             </nav>
 
@@ -37,10 +37,23 @@
         <!-- Área Principal -->
          <main class="main">
 
-           
+            <header clas="topbar">
+                <div class="search-box">
+                    <input type="search" placeholder="Bancada B02 | Pesquisar...">
+                </div>
+
+                <button id="freezeBtn" class="btn">Congelamento</button>
+                <div class="freezeDot" class="dot"></div>
+
+                <button class="btn">Novo</button>
             </header>
 
             <section class="content">
+
+                <div class="content-header">
+                    <h3>Monitor dos módulos</h3>
+                    <span class="badge" id="onlineCount">4 Online</span>
+                </div>
 
                 <div class="grid" id="grid">
                     <!-- Cards gerados pelo JS-->
@@ -48,29 +61,10 @@
             
             </section>
 
-            <div class="container">
-    <div class="box">
-        <h3>BANCADA ESTOQUE</h3>
-        <img src="bancada_estoque.png" alt="Imagem 1">
-    </div>
-
-    <div class="box">
-        <h3>BANCADA EXPEDIÇÃO</h3>
-        <img src="bancada_expedicao.png" alt="Imagem 2">
-    </div>
-
-    <div class="box">
-        <h3>BANCADA MONTAGEM</h3>
-        <img src="bancada_montagem.png" alt="Imagem 3">
-    </div>
-
-    <div class="box">
-        <h3>BANCADA PROCESSO</h3>
-        <img src="bancada_processo.png" alt="Imagem 4">
-    </div>
-</div>
-
          </main>
+    </div>
+    
+    <div id="frozenBanner" class="frozen-banner">Congelamento Ativado</div>
 
     <script src="dashboard.js"></script>
 </body>
