@@ -202,5 +202,39 @@ body {
     color: #e6eef6;
 }
 
+.visual-est{
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
 
+.linha-bolinhas{
+    display: flex;
+    gap: 6px;
+}
 
+.grid-bolinha{
+    display:grid;
+    grid-template-columns: repeat(7,1fr);
+    margin-left: 2.4vw;
+    position: auto;
+    
+    display: center;
+    gap:5.5px;
+}
+
+.bolinha{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #777;
+    
+    display: flex;
+    gap:18px;
+}
+
+.azul{
+    background-color: #0af;
+}
+    
