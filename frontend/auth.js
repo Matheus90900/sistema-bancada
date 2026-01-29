@@ -7,30 +7,21 @@ function createAccount(event) {
     const firstName = document.getElementById("firstName").value;
     const lastName = document.getElementById("lastName").value;
     const birthDate = document.getElementById("birthDate").value;
-    const email = document.getElementById("email").value.toLowerCase();
+    const usuario = document.getElementById("usuario").value.toLowerCase();
     const pass = document.getElementById("newPass").value;
 
-    let accounts = JSON.parse(localStorage.getItem("accounts")) || [];
-
-    // Verifica se já existe o e-mail cadastrado
-    if (accounts.some(acc => acc.email === email)) {
-        alert("Este e-mail já está cadastrado!");
-        return;
-    }
-
-    // Cria a conta completa
-    accounts.push({
-        firstName,
-        lastName,
-        birthDate,
-        email,
-        pass
-    });
-
-    localStorage.setItem("accounts", JSON.stringify(accounts));
-
-    alert("Conta criada com sucesso!");
-    window.location.href = "index.html"; // vai para o login
+    fetch("http://localhost:1880/usuario/criar",{
+        method:"POST",
+        body:JSON.stringify({firstName,lastName,birthDate,usuario,pass})
+    }).then((resposta)=>{
+        console.log(resposta)
+        if(resposta.ok){
+            resposta.json()
+        }
+    }).then((usuario)=>{
+        alert("Enviado e recebido")
+        window.location.href = "index.html";
+    })
 }
 
 
@@ -38,24 +29,38 @@ function createAccount(event) {
 // ============================
 // Login
 // ============================
-function login(event) {
-    event.preventDefault();
+function login(e){
+    //Prevenir o recarregamento da página
+    e.preventDefault();
 
-    const email = document.getElementById("loginEmail").value.toLowerCase();
-    const pass = document.getElementById("loginPass").value;
 
-    let accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+    //Busca os inputs do HTML
+    let input_usuario = document.getElementById("usuario");
+    let input_senha = document.getElementById("senha");
 
-    let match = accounts.find(acc =>
-        acc.email === email && acc.pass === pass
-    );
-
-    if (match) {
-        alert(`Bem-vindo(a), ${match.firstName}!`);
-        
-        window.location.href = "dashboard.html";
-    } else {
-        alert("E-mail ou senha incorretos!");
+    //Tratamento de erros, caso não tiver esses elementos
+    if(!input_usuario || !input_senha){
+        return;
     }
-}
 
+    console.log(input_usuario)
+
+    //Se chegou até aqui, conseguiu coletar usuário e senha
+    let usuario = input_usuario.value;
+    let senha = input_senha.value;
+
+    //Com o usuário e senha, podemos tentar o login
+    fetch("http://localhost:1880/autenticacao/autenticar",{
+        method:"POST",
+        body:JSON.stringify({usuario,senha})
+    }).then((resposta)=>{
+        console.log(resposta)
+        if(resposta.ok){
+            resposta.json()
+        }
+    }).then((usuario)=>{
+        window.location.href = "bancada.html";
+    })
+
+
+}
