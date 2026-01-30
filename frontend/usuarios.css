@@ -14,7 +14,7 @@ body {
 .app{
     display: grid;
     grid-template-columns: 260px 1fr;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 /* Sidebar */
@@ -48,7 +48,7 @@ body {
 
 .brand-info h2{
     font-size: 17px;
-    margin-bottom: 700;
+    margin-bottom: 700; /* ✅ corrigido */
 }
 
 .brand-info span{
@@ -76,40 +76,15 @@ body {
     color: #e6f7ff;
 }
 
-.status-box {
-    margin-top: auto;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    font-size: 13px;
-}
-
-/* Topbar */
-.topbar {
+/* Conteúdo principal */
+.content {
+    /*padding-left: 32px;*/
+    overflow-y: auto;
     display: flex;
-    align-items: center;
-    padding: 16px;
-    gap: 12px;
-    background: rgba(255, 255, 255, 0.015);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);   
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding-top:64px;
 }
-
-.search-box {
-    flex: 1;
-}
-
-.search-box input {
-    width: 100%;
-    padding: 10px 14px;
-    border: none;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.7);
-    color: white;
-    font-size: 14px;
-}
-
-
-
 /* Grid de cards */
 .grid {
     display: grid;
@@ -145,5 +120,124 @@ body {
 .card .status {
     margin-top: 12px;
     color: #7dffa4;
+}
+
+
+.cadastro-box {
+    width: 100%;
+    max-width: 420px; /* antes 500px */
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 22px; /* um pouco menor */
+    /*margin: 20px 0; /* remove o auto 
+
+    margin-top: 40px;*/
+
+}
+
+
+.cadastro-box h2 {
+    margin-bottom: 16px;
+    font-size: 20px;
+}
+
+.cadastro-box label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.cadastro-box input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(0,0,0,0.2);
+    color: #e6eef6;
+}
+
+.cadastro-box button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 16px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #64ffd1, #2fb8ff);
+    color: #071013;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cadastro-box button:hover {
+    opacity: 0.9;
+}
+
+
+/* Classe table usada como barra */ 
+.table { 
+    width: 55%;
+    display: flex; 
+    gap: 40px; 
+    flex-direction: column;
+}
+
+
+
+/* Barra no topo direito */
+.info-bar-top {
+    top: 2.3vw;
+    right: 16px;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+
+    padding: 14px;
+    z-index: 1000;
+    min-width: 560px;
+}
+
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.4fr 1fr 0.8fr 0.8fr;
+    gap: 12px;
+    font-size: 12px;
+    opacity: 0.9;
+    align-items: center;
+}
+
+/* Botões */
+.btn {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 11px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Alterar */
+.btn.edit {
+    background: rgba(47, 184, 255, 0.2);
+    color: #9ddcff;
+}
+
+.btn.edit:hover {
+    background: rgba(47, 184, 255, 0.35);
+}
+
+/* Excluir */
+.btn.delete {
+    background: rgba(255, 80, 80, 0.2);
+    color: #ffb3b3;
+}
+
+.btn.delete:hover {
+    background: rgba(255, 80, 80, 0.35);
 }
 

@@ -1,44 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suporte</title>
-    <link rel="stylesheet" href="suporte.css">
+    <link rel="stylesheet" href="usuarios.css">
 </head>
+
 <body>
 
     <div class="app" id="app">
-      
-        <!-- Menu Lateral-->
-         <aside class="sidebar">
+
+        <!-- Menu Lateral -->
+        <aside class="sidebar">
             <div class="brand">
                 <div class="logo">S</div>
                 <div class="brand-info">
-                    <h2>SMARTIS</h2>
+                    <h2>SMART 4.0</h2>
                     <span>Painel de Controle</span>
                 </div>
             </div>
 
             <nav class="menu">
                 <a href="bancada.html">Bancada</a>
-                <a href="#" class="active">Usuário</a>
-                <a href="suporte.html">Suporte</a>
+                <a href="usuarios.html" class="active">Usuário</a>
             </nav>
         </aside>
+        <div class="content">
+            <div class="cadastro-box">
+                <h2>Criar Conta</h2>
 
-        <!-- Área Principal -->
-         <main class="main">
+                <form id="formCadastro">
+                    <label>Nome</label>
+                    <input type="text" id="nome" required>
 
-            <header clas="topbar">
+                    <label>Sobrenome</label>
+                    <input type="text" id="sobrenome" required>
 
-                </div>
+                    <label>Data de Nascimento</label>
+                    <input type="date" id="nascimento" required>
+
+                    <label>Usuário</label>
+                    <input type="text" id="usuario" required>
+
+                    <label>Senha</label>
+                    <input type="password" id="senha" required>
+
+                    <button onclick="createAccount(event)">Criar Conta</button>
+                </form>
+            </div>
+            <!-- Barra lateral -->
             
-            </section>
+        <div class="table info-bar-top" id="listaUsuarios">
+                <div class="row header">
+                <span>NOME</span>
+                <span>SOBRENOME</span>
+                <span>DATA NASC.</span>
+                <span>USUÁRIO</span>
+                <span>ALTERAR</span>
+                <span>EXCLUIR</span>
+            </div>
 
-         </main>
-    </div>
+            <div class="row">
+                <span>Lucas</span>
+                <span>Silva</span>
+                <span>12/04/2002</span>
+                <span>lucas.s</span>
+                <button class="btn edit">Alterar</button>
+                <button class="btn delete" onclick="excluirUsuario(0)">Excluir</button>
+            </div>
 
-    <script src="usuario.js"></script>
+            <div class="row">
+                <span>Ana</span>
+                <span>Pereira</span>
+                <span>28/09/2001</span>
+                <span>ana.p</span>
+                <button class="btn edit">Alterar</button>
+                <button class="btn delete" onclick="excluirUsuario(0)">Excluir</button>
+            </div>
+
+            <div class="row">
+                <span>Mateus</span>
+                <span>Oliveira</span>
+                <span>03/01/2003</span>
+                <span>mateus.o</span>
+                <button class="btn edit">Alterar</button>
+                <button class="btn delete" onclick="excluirUsuario(0)">Excluir</button>
+            </div>
+
+            <div class="row">
+                <span>Beatriz</span>
+                <span>Ramos</span>
+                <span>19/07/2002</span>
+                <span>bia.r</span>
+                <button class="btn edit">Alterar</button>
+                <button class="btn delete" onclick="excluirUsuario(0)">Excluir</button>
+        </div>   
+        </div>
+            </main>
+
+        </div>
+        <script src="usuario.js"></script>
 </body>
+
 </html>

@@ -10,7 +10,7 @@ function createAccount(event) {
     const usuario = document.getElementById("usuario").value.toLowerCase();
     const pass = document.getElementById("newPass").value;
 
-    fetch("http://localhost:1880/usuario/criar",{
+    fetch("http://localhost:1880/index/criar",{
         method:"POST",
         body:JSON.stringify({firstName,lastName,birthDate,usuario,pass})
     }).then((resposta)=>{
@@ -50,7 +50,7 @@ function login(e){
     let senha = input_senha.value;
 
     //Com o usuário e senha, podemos tentar o login
-    fetch("http://localhost:1880/autenticacao/autenticar",{
+    fetch("http://localhost:1880/index/autenticacao/autenticar",{
         method:"POST",
         body:JSON.stringify({usuario,senha})
     }).then((resposta)=>{
