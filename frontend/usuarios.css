@@ -203,9 +203,9 @@ body {
 
 
 .row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1.4fr 1fr 0.8fr 0.8fr;
-    gap: 12px;
+    display: flex;
+    grid-template-columns: 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
+    gap: 87px;
     font-size: 12px;
     opacity: 0.9;
     align-items: center;

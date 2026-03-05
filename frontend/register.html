@@ -16,11 +16,12 @@
     <h1>Criar Conta</h1>
 
     <form>
-        <input id="firstName" type="text" placeholder="Nome" required />
-        <input id="lastName" type="text" placeholder="Sobrenome" required />
-        <input id="birthDate" type="date" required />
+        <input id="nome" type="text" placeholder="Nome" required />
+        <input id="sobrenome" type="text" placeholder="Sobrenome" required />
+        <input id="nascimento" type="date" required />
+        <input id="email" type="text" placeholder="Email" required>
         <input id="usuario" type="usuario" placeholder="Usuário" required />
-        <input id="newPass" type="password" placeholder="Senha" required />
+        <input id="senha" type="password" placeholder="Senha" required />
 
         <button type="submit" onclick="createAccount(event)">Criar Conta</button>
     </form>
@@ -28,8 +29,8 @@
     <p><a href="index.html">Voltar ao login</a></p>
 </div>
 
+<script src="usuario.js"></script>
 <script src="particles.js"></script>
-<script src="auth.js"></script>
 
 </body>
 </html>
