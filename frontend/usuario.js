@@ -1,3 +1,8 @@
+window.onload = ()=>{
+    buscarUsuarios()
+}
+
+
 // ============================
 // Criar Conta
 // ============================
@@ -24,6 +29,48 @@ function createAccount(event) {
     })
 }
 
+async function buscarUsuarios(){
+    try{
+        let resposta = await fetch("http://localhost:1880/buscar/usuario");
+        if(!resposta.ok){
+            throw new Error("Erro ao buscar")
+        }
+        let dados = await resposta.json()
+        console.log(dados)
+        listaUsuarios(dados)
+    }catch(e){
+        console.error(e)
+    }
+}
+
+function listaUsuarios(usuarios){
+    
+    let tabela = document.getElementById("listaUsuarios")
+
+    usuarios.forEach((usuario)=>{
+
+        let data = new Date(usuario.dt_nascimento);
+
+        let linha = `
+        <tr>
+            <td>${usuario.nome}</td>
+            <td>${usuario.sobrenome}</td>
+            <td>${data.toLocaleDateString('pt-br')}</td>
+            <td>${usuario.usuario}</td>
+            <td>${usuario.email}</td>
+            <td><button onclick="carregarDados(${usuario.id})">Alterar</button></td>
+            <td>EXCLUIR</td>
+        </tr>
+        `
+
+        tabela.innerHTML += linha
+    })
+
+}
+
+function carregarDados(id){
+
+}
 
 
 // ============================
